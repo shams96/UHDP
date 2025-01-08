@@ -1,0 +1,18 @@
+To restore the application from this rollback point, follow these steps:
+
+    1. Delete the current application files and directories:
+       rm package.json && rm index.html && rm src/main.jsx && rm src/App.jsx && rm src/index.css && rm -r src/components
+
+    2. Copy the files from the backup directory to the root directory:
+       cp backup-uhdp-app/package.json . &&
+       cp backup-uhdp-app/index.html . &&
+       cp backup-uhdp-app/src/main.jsx src &&
+       cp backup-uhdp-app/src/App.jsx src &&
+       cp backup-uhdp-app/src/index.css src &&
+       cp -r backup-uhdp-app/src/components src
+
+    3. Install dependencies:
+       npm install --yes
+
+    4. Start the application:
+       npm run dev
